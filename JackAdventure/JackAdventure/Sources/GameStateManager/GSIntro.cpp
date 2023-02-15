@@ -35,9 +35,8 @@ void GSIntro::Init()
 	m_Logo.setOrigin((sf::Vector2f)texture->getSize()/2.f);
 }
 
-void GSIntro::Update(float deltaTime)
+void GSIntro::Update(float deltaTime, sf::Event event)
 {
-	//GameStateMachine::GetInstance()->ChangeState(StateTypes::PLAY);
 	m_currentTime += deltaTime;
 	if (m_currentTime >= 3.f) {
 		GameStateMachine::GetInstance()->ChangeState(StateTypes::MENU);

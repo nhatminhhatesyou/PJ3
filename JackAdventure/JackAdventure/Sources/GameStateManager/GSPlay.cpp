@@ -41,7 +41,7 @@ void GSPlay::Init()
 	DATA->getMusic("Uprising")->setVolume(30);
 }
 
-void GSPlay::Update(float deltaTime)
+void GSPlay::Update(float deltaTime, sf::Event event)
 {
 	if (m_Player.getHitBox()->isAlive()) {
 		m_currentTime += deltaTime;

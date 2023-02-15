@@ -62,10 +62,10 @@ void GSHighScore::Init()
 	}
 }
 
-void GSHighScore::Update(float deltaTime)
+void GSHighScore::Update(float deltaTime, sf::Event event)
 {
 	for (auto btn : m_ListBtn) {
-		btn->Update(deltaTime);
+		btn->Update(deltaTime, event);
 	}
 	
 }

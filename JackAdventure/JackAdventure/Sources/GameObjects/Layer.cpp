@@ -13,7 +13,7 @@ void Layer::Init(std::string name, float speed)
 	m_Image2.setPosition(m_SizeImage.x*1.5f, m_Image1.getPosition().y);
 
 	m_Image1.setOrigin((sf::Vector2f)m_SizeImage *0.5f);
-	m_Image2.setOrigin((sf::Vector2f)m_SizeImage * 0.5f);
+	m_Image2.setOrigin((sf::Vector2f)m_SizeImage *0.5f);
 }
 
 void Layer::Update(float deltaTime)

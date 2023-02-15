@@ -27,7 +27,7 @@ void GSMenu::Init()
 	button = new GameButton();
 	button->Init("play");
 	button->setOnClick([]() {GSM->ChangeState(StateTypes::PLAY); });
-	button->setPosition(screenWidth / 2, screenHeight / 2+screenHeight/10);
+	button->setPosition(screenWidth / 2, screenHeight / 2);
 	button->setSize(sf::Vector2f(150,150));
 	button->setOrigin(button->getSize() / 2.f);
 	m_ListBtn.push_back(button);
@@ -36,7 +36,7 @@ void GSMenu::Init()
 	button = new GameButton();
 	button->Init("close");
 	button->setOrigin(button->getSize() / 2.f);
-	button->setPosition(screenWidth / 2+screenWidth/4, screenHeight-screenHeight/8);
+	button->setPosition(screenWidth - 75 , 75);
 	button->setOnClick([]() {WConnect->getWindow()->close(); });
 	m_ListBtn.push_back(button);
 
@@ -44,7 +44,7 @@ void GSMenu::Init()
 	button = new GameButton();
 	button->Init("settings");
 	button->setOrigin(button->getSize() / 2.f);
-	button->setPosition(screenWidth / 2 - screenWidth / 4, screenHeight - screenHeight / 8);
+	button->setPosition(75, 75);
 	button->setOnClick([]() {GSM->ChangeState(StateTypes::SETTING); });
 	m_ListBtn.push_back(button);
 
@@ -58,7 +58,7 @@ void GSMenu::Init()
 
 	//HighScore Button
 	button = new GameButton();
-	button->Init("prize");
+	button->Init("leaderboard");
 	button->setOrigin(button->getSize() / 2.f);
 	button->setPosition(screenWidth / 2 - screenWidth / 12, screenHeight - screenHeight / 8);
 	button->setOnClick([]() {GSM->ChangeState(StateTypes::HIGHSCORE); });
@@ -74,10 +74,10 @@ void GSMenu::Init()
 	ScoreManager::GetInstance()->readFile();
 }
 
-void GSMenu::Update(float deltaTime)
+void GSMenu::Update(float deltaTime, sf::Event event)
 {
 	for (auto btn : m_ListBtn) {
-		btn->Update(deltaTime);
+		btn->Update(deltaTime, event);
 	}
 }
 

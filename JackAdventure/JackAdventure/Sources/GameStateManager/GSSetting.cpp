@@ -25,7 +25,7 @@ void GSSetting::Init()
 	GameButton* button;
 	//close Button
 	button = new GameButton();
-	button->Init("close_2");
+	button->Init("close");
 	button->setOrigin(button->getSize() / 2.f);
 	button->setSize(sf::Vector2f(50, 50));
 	button->setPosition(screenWidth -screenWidth/20, screenHeight/8);
@@ -33,7 +33,7 @@ void GSSetting::Init()
 	m_ListBtn.push_back(button);
 	//turn on music
 	button = new GameButton();
-	button->Init("misic");
+	button->Init("Sound");
 	button->setOrigin(button->getSize() / 2.f);
 	button->setSize(sf::Vector2f(100, 100));
 	button->setPosition(screenWidth / 2 + screenWidth / 4, screenHeight - screenHeight / 8);
@@ -42,7 +42,7 @@ void GSSetting::Init()
 
 	//turn off music
 	button = new GameButton();
-	button->Init("music_off");
+	button->Init("sound_off");
 	button->setOrigin(button->getSize() / 2.f);
 	button->setSize(sf::Vector2f(100, 100));
 	button->setPosition(screenWidth / 2 - screenWidth / 4, screenHeight - screenHeight / 8);
@@ -61,10 +61,10 @@ void GSSetting::Init()
 	m_Title.setPosition(screenWidth/2,screenHeight/5);
 }
 
-void GSSetting::Update(float deltaTime)
+void GSSetting::Update(float deltaTime, sf::Event event)
 {
 	for (auto btn : m_ListBtn) {
-		btn->Update(deltaTime);
+		btn->Update(deltaTime, event);
 	}
 }
 

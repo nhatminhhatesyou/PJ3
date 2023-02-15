@@ -73,10 +73,10 @@ void GSEnd::Init()
 	m_currentScore.setPosition(screenWidth / 2, screenHeight / 2 + 50);
 }
 
-void GSEnd::Update(float deltaTime)
+void GSEnd::Update(float deltaTime, sf::Event event)
 {
 	for (auto btn : m_ListBtn) {
-		btn->Update(deltaTime);
+		btn->Update(deltaTime, event);
 	}
 }
 

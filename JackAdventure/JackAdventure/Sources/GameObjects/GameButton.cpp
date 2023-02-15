@@ -15,26 +15,45 @@ void GameButton::Init(std::string name)
 	this->setSize(sf::Vector2f(100, 100));
 }
 
-void GameButton::Update(float deltaTime)
+void GameButton::Update(float deltaTime, sf::Event event)
 {
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-		HandleTouchEvent();
-	}
+	/*if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+		printf("Click chuot nek\n");
+		if (event.type == sf::Event::MouseButtonReleased)
+			{
+				HandleTouchEvent();
+				printf("Release chuot nek\n");
+			}
+		
+	}*/
+
+	if (event.type == sf::Event::MouseButtonReleased)
+			{
+				HandleTouchEvent();
+				printf("Release chuot nek\n");
+			}
+				
 }
 
 void GameButton::Render(sf::RenderWindow* window)
 {
 	window->draw(*this);
+	
+}
+
+bool GameButton::IsMouseRelease(sf::RenderWindow* window)
+{
+
+	return false;
 }
 
 void GameButton::HandleTouchEvent()
 {
-	m_isHandling = false;
-	if (this->getGlobalBounds().contains((sf::Vector2f)sf::Mouse::getPosition(*WConnect->getWindow())))
-	{
-		m_btnClickFunc();
-		m_isHandling = true;
-	}
+		if (this->getGlobalBounds().contains((sf::Vector2f)sf::Mouse::getPosition(*WConnect->getWindow())))
+		{
+			m_isHandling = true;
+			m_btnClickFunc();
+		}
 }
 
 bool GameButton::isHandle()

@@ -8,7 +8,7 @@ PSJump::PSJump(IPlayer* player)
 
 void PSJump::Init()
 {
-	m_Animation = new Animation(*DATA->getTexture("Character/Jump"), sf::Vector2i(4, 1), 0.1f);
+	m_Animation = new Animation(*DATA->getTexture("Character/Jump"), sf::Vector2i(11, 1), 0.1f);
 	m_Animation->setModeEndFrame(true);
 }
 
@@ -17,7 +17,7 @@ void PSJump::Update(float deltaTime)
 	m_Animation->Update(deltaTime);
 	m_currentTime += deltaTime;
 
-	float v = 10 * m_currentTime;
+	float v = 15 * m_currentTime;
 	if (-m_Player->getHitBox()->getVelocity().y * deltaTime + v >= 0) {
 		m_Player->changeNextState(FALL);
 		m_currentTime = 0.f;

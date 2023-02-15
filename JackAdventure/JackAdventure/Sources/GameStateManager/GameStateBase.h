@@ -12,7 +12,7 @@ public:
 	virtual void Resume() = 0;
 
 	virtual void Init() = 0;
-	virtual void Update(float deltaTime) = 0;
+	virtual void Update(float deltaTime, sf::Event event) = 0;
 	virtual void Render(sf::RenderWindow* window) = 0;
 
 	static GameStateBase* CreateState(StateTypes st);

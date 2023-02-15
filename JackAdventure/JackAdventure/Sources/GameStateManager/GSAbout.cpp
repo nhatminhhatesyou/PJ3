@@ -44,11 +44,11 @@ void GSAbout::Init()
 	m_Title.setPosition(screenWidth / 2, screenHeight / 5);
 }
 
-void GSAbout::Update(float deltaTime)
+void GSAbout::Update(float deltaTime, sf::Event event)
 {
 	for (auto btn : m_ListBtn) {
-		btn->Update(deltaTime);
-	}
+		btn->Update(deltaTime, event);
+	}	
 }
 
 void GSAbout::Render(sf::RenderWindow* window)

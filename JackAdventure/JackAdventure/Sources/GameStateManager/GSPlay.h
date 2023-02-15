@@ -16,7 +16,7 @@ public:
 	void Resume();
 
 	void Init();
-	void Update(float deltaTime);
+	void Update(float deltaTime, sf::Event event);
 	void Render(sf::RenderWindow* window);
 private:
 	ParallexBackground m_Background;

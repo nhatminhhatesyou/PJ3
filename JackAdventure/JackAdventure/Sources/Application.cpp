@@ -29,18 +29,23 @@ void Application::Run()
         {
             if (event.type == sf::Event::Closed)
                 m_window->close();
+            /*if (event.type == sf::Event::MouseButtonReleased)
+            {
+                Update(deltaTime, event);
+                printf("Release chuot nek\n");
+            }*/
         }
-        Update(deltaTime);
+        Update(deltaTime, event);
         Render();
     }
 }
 
-void Application::Update(float deltaTime)
+void Application::Update(float deltaTime, sf::Event event)
 {
     if (GameStateMachine::GetInstance()->NeedToChangeState()) {
         GameStateMachine::GetInstance()->PerformStateChange();
     }
-    GameStateMachine::GetInstance()->currentState()->Update(deltaTime);
+    GameStateMachine::GetInstance()->currentState()->Update(deltaTime, event);
     //Doing something
 }
 

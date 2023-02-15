@@ -8,11 +8,11 @@
 Player::Player()
 {
 	m_nextState = IPState::SNULL;
-	m_runState=new PSRun(this);
-	m_jumpState=new PSJump(this);
-	m_fallState=new PSFall(this);
-	m_deathState=new PSDeath(this);
-	m_attackState=new PSAttack(this);
+	m_runState = new PSRun(this);
+	m_jumpState = new PSJump(this);
+	m_fallState = new PSFall(this);
+	m_deathState = new PSDeath(this);
+	m_attackState = new PSAttack(this);
 	m_currentState = m_runState;
 }
 
