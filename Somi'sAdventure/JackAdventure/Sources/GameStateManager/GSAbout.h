@@ -14,8 +14,9 @@ public:
 	void Render(sf::RenderWindow* window);
 private:
 	sf::Sprite m_Background;
+	sf::Sprite m_HowToPlay;
 	std::list<GameButton*> m_ListBtn;
 	sf::Text m_Title;
 	sf::Text m_Content;
-
+	sf::Text m_Introduction;
 };

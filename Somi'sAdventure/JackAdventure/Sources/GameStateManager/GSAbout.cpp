@@ -51,6 +51,19 @@ void GSAbout::Init()
 	m_Content.setPosition(screenWidth / 2, screenHeight / 5 + 50);
 	rc = m_Content.getLocalBounds();
 	m_Content.setOrigin(rc.width / 2, rc.height / 2);
+
+	//HOW TO PLAY - text
+	m_Introduction.setString("HOW TO PLAY");
+	m_Introduction.setFont(*DATA->getFont("ARCADE"));
+	m_Introduction.setPosition(screenWidth / 2, screenHeight / 5 + 100);
+	rc = m_Introduction.getLocalBounds();
+	m_Introduction.setOrigin(rc.width / 2, rc.height / 2);
+
+	//HOW TO PLAY - img
+	texture = DATA->getTexture("Background layers/introduction");
+	m_HowToPlay.setTexture(*texture);
+	m_HowToPlay.setOrigin((sf::Vector2f)texture->getSize() / 2.f);
+	m_HowToPlay.setPosition(screenWidth / 2, screenHeight / 5 + 150);
 }
 
 void GSAbout::Update(float deltaTime)
@@ -63,9 +76,11 @@ void GSAbout::Update(float deltaTime)
 void GSAbout::Render(sf::RenderWindow* window)
 {
 	window->draw(m_Background);
+	window->draw(m_HowToPlay);
 	for (auto btn : m_ListBtn) {
 		btn->Render(window);
 	}
 	window->draw(m_Title);
 	window->draw(m_Content);
+	window->draw(m_Introduction);
 }

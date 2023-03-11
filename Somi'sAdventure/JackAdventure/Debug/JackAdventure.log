@@ -1,2 +1,7 @@
-﻿  PSDeath.cpp
+﻿  GSAbout.cpp
+F:\CODE\Project_III\Somi'sAdventure\JackAdventure\Sources\GameStateManager\GSAbout.cpp(39,57): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
   JackAdventure.vcxproj -> F:\CODE\Project_III\Somi'sAdventure\Debug\Somi'sAdventure.exe
